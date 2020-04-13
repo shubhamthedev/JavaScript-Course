@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async & Await</title>
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      background-color: #28292a;
+      color: #fff;
+    }
+    code {
+      background-color: #28292a;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <h3>Async & Await</h3>
+          <p>
+            The async function declaration defines an asynchronous function — a
+            function that is an AsyncFunction object.
+          </p>
+          <p>
+            Asynchronous functions operate in a separate order than the rest of
+            the code via the event loop, returning an implicit Promise as its
+            result. But the syntax and structure of code using async functions
+            looks like standard synchronous functions.
+          </p>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+            class="button button-primary"
+            target="blank"
+            >Learn More</a
+          >
+        </div>
+        <div class="six columns">
+          <pre><code>function resolveAfter2Seconds() {
+              return new Promise(resolve => {
+                  setTimeout(() => {
+                      resolve('resolved');
+                    }, 2000);
+                });
+            }
+            async function asyncCall() {
+                console.log('calling');
+                const result = await resolveAfter2Seconds();
+                console.log(result);
+                // expected output: 'resolved'
+            }
+            asyncCall();</code></pre>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
